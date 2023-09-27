@@ -1,0 +1,4 @@
+http_port: 8080
+rpc_port: 8081
+metrics_port: 8082
+forward_url: "localhost:10221"

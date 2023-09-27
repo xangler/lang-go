@@ -1,0 +1,13 @@
+http_port: 8080
+rpc_port: 8081
+metrics_port: 8082
+check_period: 60
+sql:
+  driver_name: mysql
+  net_mode: tcp
+  para: charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai
+locker:
+  name: demo
+  period: 10
+  dead: 30
+  work_mark: worker

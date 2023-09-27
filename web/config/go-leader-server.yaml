@@ -1,0 +1,11 @@
+http_port: 8080
+rpc_port: 8081
+metrics_port: 8082
+plf_config:
+  leader_elect: true
+  server_forward: true
+  forward_config: 
+    rpc_port: 8081
+  client_config:
+    namespace: demo
+    lock_name: demo-locker
