@@ -1,19 +1,14 @@
 package main
 
-//#cgo CPPFLAGS: -I../../3rdmod
-//#cgo LDFLAGS: -L../../3rdmod -lcfuzz -lstdc++ -lm
-//
-//#include "cfuzz.h"
-import "C"
-
 import (
 	"fmt"
+
+	rapid_fuzz "github.com/learn-go/go-fuzz/3rdpkg/rapid-fuzz"
 )
 
 func main() {
 	fmt.Printf("fuzz cgo test start..\n")
-	n := (*C.struct_CScoreAlignment)(C.SCPartialRatioAlignment(C.CString("ago"), C.CString("hello cgo")))
-	defer C.DeleteSCScoreAlignment(n)
-	fmt.Printf("%+v\n", n.score)
+	sa := rapid_fuzz.PartialRatioAlignment("ago", "hello cgo")
+	fmt.Printf("%+v\n", sa)
 	fmt.Printf("fuzz cgo test end..\n")
 }

@@ -3,7 +3,7 @@ cmake_minimum_required (VERSION 3.0)
 project (Fuzz)
 
 aux_source_directory(. DIR_SRCS)
-add_subdirectory(../3rdparty/RapidFuzz ../3rdparty/RapidFuzz)
+add_subdirectory(../../3rdparty/RapidFuzz ../../3rdparty/RapidFuzz)
 
 add_library(cfuzz STATIC cfuzz.cpp)
 target_include_directories(cfuzz PUBLIC .)
