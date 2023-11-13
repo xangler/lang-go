@@ -12,10 +12,11 @@ extern "C"{
         size_t dest_end;
     };
     typedef struct CScoreAlignment SCScoreAlignment;
+    // 返回char* 对应的 wstring位置
     SCScoreAlignment* SCPartialRatioAlignment(char* src, char* dst);
     void DeleteSCScoreAlignment(SCScoreAlignment* p);
 
 #ifdef __cplusplus
-};
+}
 #endif
 #endif // !C_SCORE_ALIGNMENT_H

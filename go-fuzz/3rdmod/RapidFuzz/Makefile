@@ -57,10 +57,10 @@ RM = /home/zhangyafei/.pyenv/versions/3.10.8/lib/python3.10/site-packages/cmake/
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/work/github/language/learn-go/go-fuzz/3rdmod/RapidFuzz
+CMAKE_SOURCE_DIR = /mnt/work/github/lang-go/go-fuzz/3rdmod/RapidFuzz
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/work/github/language/learn-go/go-fuzz/3rdmod/RapidFuzz
+CMAKE_BINARY_DIR = /mnt/work/github/lang-go/go-fuzz/3rdmod/RapidFuzz
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/work/github/language/learn-go/go-fuzz/3rdmod/RapidFuzz/CMakeFiles /mnt/work/github/language/learn-go/go-fuzz/3rdmod/RapidFuzz//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/work/github/lang-go/go-fuzz/3rdmod/RapidFuzz/CMakeFiles /mnt/work/github/lang-go/go-fuzz/3rdmod/RapidFuzz//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/work/github/language/learn-go/go-fuzz/3rdmod/RapidFuzz/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/work/github/lang-go/go-fuzz/3rdmod/RapidFuzz/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named Mains.out
+
+# Build rule for target.
+Mains.out: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Mains.out
+.PHONY : Mains.out
+
+# fast build rule for target.
+Mains.out/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mains.out.dir/build.make CMakeFiles/Mains.out.dir/build
+.PHONY : Mains.out/fast
+
+#=============================================================================
 # Target rules for targets named cfuzz
 
 # Build rule for target.
@@ -130,17 +143,17 @@ cfuzz/fast:
 .PHONY : cfuzz/fast
 
 #=============================================================================
-# Target rules for targets named Demo.out
+# Target rules for targets named Mainc.out
 
 # Build rule for target.
-Demo.out: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Demo.out
-.PHONY : Demo.out
+Mainc.out: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Mainc.out
+.PHONY : Mainc.out
 
 # fast build rule for target.
-Demo.out/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.out.dir/build.make CMakeFiles/Demo.out.dir/build
-.PHONY : Demo.out/fast
+Mainc.out/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mainc.out.dir/build.make CMakeFiles/Mainc.out.dir/build
+.PHONY : Mainc.out/fast
 
 cfuzz.o: cfuzz.cpp.o
 .PHONY : cfuzz.o
@@ -166,29 +179,53 @@ cfuzz.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cfuzz.dir/build.make CMakeFiles/cfuzz.dir/cfuzz.cpp.s
 .PHONY : cfuzz.cpp.s
 
-main.o: main.c.o
-.PHONY : main.o
+mainc.o: mainc.c.o
+.PHONY : mainc.o
 
 # target to build an object file
-main.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.out.dir/build.make CMakeFiles/Demo.out.dir/main.c.o
-.PHONY : main.c.o
+mainc.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mainc.out.dir/build.make CMakeFiles/Mainc.out.dir/mainc.c.o
+.PHONY : mainc.c.o
 
-main.i: main.c.i
-.PHONY : main.i
+mainc.i: mainc.c.i
+.PHONY : mainc.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.out.dir/build.make CMakeFiles/Demo.out.dir/main.c.i
-.PHONY : main.c.i
+mainc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mainc.out.dir/build.make CMakeFiles/Mainc.out.dir/mainc.c.i
+.PHONY : mainc.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+mainc.s: mainc.c.s
+.PHONY : mainc.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demo.out.dir/build.make CMakeFiles/Demo.out.dir/main.c.s
-.PHONY : main.c.s
+mainc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mainc.out.dir/build.make CMakeFiles/Mainc.out.dir/mainc.c.s
+.PHONY : mainc.c.s
+
+mains.o: mains.cpp.o
+.PHONY : mains.o
+
+# target to build an object file
+mains.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mains.out.dir/build.make CMakeFiles/Mains.out.dir/mains.cpp.o
+.PHONY : mains.cpp.o
+
+mains.i: mains.cpp.i
+.PHONY : mains.i
+
+# target to preprocess a source file
+mains.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mains.out.dir/build.make CMakeFiles/Mains.out.dir/mains.cpp.i
+.PHONY : mains.cpp.i
+
+mains.s: mains.cpp.s
+.PHONY : mains.s
+
+# target to generate assembly for a file
+mains.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Mains.out.dir/build.make CMakeFiles/Mains.out.dir/mains.cpp.s
+.PHONY : mains.cpp.s
 
 # Help Target
 help:
@@ -198,14 +235,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Demo.out"
+	@echo "... Mainc.out"
+	@echo "... Mains.out"
 	@echo "... cfuzz"
 	@echo "... cfuzz.o"
 	@echo "... cfuzz.i"
 	@echo "... cfuzz.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... mainc.o"
+	@echo "... mainc.i"
+	@echo "... mainc.s"
+	@echo "... mains.o"
+	@echo "... mains.i"
+	@echo "... mains.s"
 .PHONY : help
 
 
