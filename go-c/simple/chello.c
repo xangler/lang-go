@@ -11,6 +11,10 @@ void CSayHello(const char* s){
     printf("%s", s);
 }
 
+int CDiv(int a, int b){
+    return a/b;
+}
+
 void SetCObj(void ** obj){
     struct CObj * nobj = (struct CObj *)malloc(sizeof(struct CObj));
     nobj->mAge = 5;

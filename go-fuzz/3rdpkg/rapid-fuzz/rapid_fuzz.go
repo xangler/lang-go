@@ -14,6 +14,7 @@ type GScoreAlignment struct {
 	SrcEnd   int
 	DstStart int
 	DstEnd   int
+	Crash bool
 }
 
 func PartialRatioAlignment(src, dst string) *GScoreAlignment {
@@ -29,5 +30,6 @@ func PartialRatioAlignment(src, dst string) *GScoreAlignment {
 		SrcEnd:   int(sa.src_end),
 		DstStart: int(sa.dest_start),
 		DstEnd:   int(sa.dest_end),
+		Crash:    bool(sa.crash),
 	}
 }

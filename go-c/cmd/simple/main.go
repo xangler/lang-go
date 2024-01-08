@@ -13,11 +13,21 @@ import (
 
 //export GoSayHello
 func GoSayHello(s *C.char) {
-	fmt.Printf(C.GoString(s))
+	fmt.Println(C.GoString(s))
+}
+
+func check() {
+	defer func() {
+		if r := recover(); r != nil {
+			fmt.Println("Recovered call to div", r)
+		}
+	}()
+	fmt.Printf("check %v\n", C.CDiv(C.int(3), C.int(2)))
 }
 
 func main() {
 	fmt.Printf("simple cgo test start..\n")
+	check()
 	C.CSayHello(C.CString("chello cgo\n"))
 	C.GSayHello(C.CString("gohello cgo\n"))
 	v := C.CAddMth(C.int(3), C.int(2))
